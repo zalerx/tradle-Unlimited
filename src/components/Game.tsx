@@ -23,8 +23,13 @@ import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { useCountry } from "../hooks/useCountry";
 
-function getDayString() {
-  return DateTime.now().toFormat("yyyy-MM-dd");
+function getRandomDateString() {
+  const start = new Date(2020, 0, 1);
+  const end = new Date();
+  const randomDate = new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+  return randomDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 }
 
 const MAX_TRY_COUNT = 6;
@@ -35,7 +40,7 @@ interface GameProps {
 
 export function Game({ settingsData }: GameProps) {
   const { t, i18n } = useTranslation();
-  const dayString = useMemo(getDayString, []);
+  const [dayString, setDayString] = useState(getRandomDateString());
 
   const countryInputRef = useRef<HTMLInputElement>(null);
 

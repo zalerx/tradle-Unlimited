@@ -89,9 +89,9 @@ function App() {
               {/* <span className="text-red-600">TRADE</span>LE */}
               <img
                 className="block m-auto"
-                src="images/oec-tradle-logo.png"
+                src="/images/emn-tradle.png"
                 alt="logo"
-                width="120"
+                width="300"
               />
             </h1>
             <button
