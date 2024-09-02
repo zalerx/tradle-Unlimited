@@ -89,7 +89,7 @@ function App() {
               {/* <span className="text-red-600">TRADE</span>LE */}
               <img
                 className="block m-auto"
-                src="/images/emn-tradle.png"
+                src="/images/logo.png"
                 alt="logo"
                 width="300"
               />
